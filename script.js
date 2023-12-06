@@ -53,6 +53,14 @@ function killEnemy(){
     enemyEl.remove();
     spawnEnemy();
   }, 300);
+
+  const lootAnim = [
+    {transform: "rotateY(0) translate(0%, 0%)", opacity: 1},
+    {opacity: 1, offset: 0.5},
+    {transform: "rotateY(500deg) translate(0%, -200%)", opacity: 0}
+  ]
+  const lootTiming = { duration: 800, iterations: 1};
+  document.getElementById("loot").animate(lootAnim, lootTiming);
 }
 
 function spawnEnemy(){
