@@ -2,9 +2,36 @@
 <html>
   <head>
     <script type="application/javascript" src="script.js"></script>
+    <style>
+      body {
+	text-align: center;
+      }
+      .pinataBox{
+        width: 800px;
+	height: 400px;
+	cursor: none;
+	border-radius: 30px;
+	border: 1px solid black;
+	margin: auto;
+      }
+
+      .weapon {
+	visibility: hidden;
+	position: absolute;
+	pointer-events: none;
+      }
+    </style>
   </head>
 
   <body>
-    <h1>Test Heading</h1>
+    <h1>Crack open your loot!</h1>
+    <div 
+      class="pinataBox" 
+      onmousemove="moveWeapon(event)"
+      onmouseout="hideWeapon()"
+      onmouseenter="showWeapon()"
+    >
+    </div>
+    <img onload="initWeapon()" id="weapon" class="weapon" src="assets/buster sword.webp"></img>
   </body>
 </html>
