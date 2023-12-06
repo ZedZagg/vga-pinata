@@ -14,6 +14,17 @@
 	border-radius: 8px;
 	margin: auto;
 	background-image: url("assets/background.png");
+	
+	> div {
+          pointer-events: none;
+          img {
+	    pointer-events: none;
+	    width: 20%;
+	    display: block;
+	    margin: auto;
+	    margin-top: 100px;
+	  }
+	}
       }
 
       .weapon {
@@ -42,18 +53,17 @@
 	text-align: center;
 	font-size: 50px;
 	font-family: "arial", sans-serif;
-	padding: 20px;
+	padding: 20px 0px;
         background: linear-gradient(352deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 48%, rgba(7,0,255,1) 100%);
       }
     </style>
   </head>
 
-  <body>
+  <body onload="spawnEnemy()">
     <div class="borderOuter">
       <div class="borderInner">
-	<div class="textBoxInner">
-	  
-    The nominees fought back!
+	<div class="textBoxInner" id="textbox">
+	  The nominees fought back!
         </div>
       </div>
     </div>
@@ -66,6 +76,7 @@
           onmouseenter="showWeapon()"
 	  onmousedown="swingWeapon()"
         >
+	  <div id="enemy"></div>
 	</div>
       </div>
     </div>
