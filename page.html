@@ -4,15 +4,16 @@
     <script type="application/javascript" src="script.js"></script>
     <style>
       body {
-	text-align: center;
+	background: black;
       }
       .pinataBox{
         width: 800px;
 	height: 400px;
 	cursor: none;
-	border-radius: 30px;
-	border: 1px solid black;
+	border: 2px solid #AAA;
+	border-radius: 8px;
 	margin: auto;
+	background-image: url("assets/background.png");
       }
 
       .weapon {
@@ -20,17 +21,52 @@
 	position: absolute;
 	pointer-events: none;
       }
+
+      .borderOuter {
+	border: 2px solid #AAA;
+	border-radius: 8px;
+	margin: auto;
+	margin-bottom: 20px;
+	width: fit-content;
+      }
+      .borderInner {
+	border: 1px solid white;
+	border-radius: 8px;
+	width: fit-content;
+      }
+      .textBoxInner {
+	border: 2px solid #AAA;
+	border-radius: 8px;
+	color: white;
+	width: 800px;
+	text-align: center;
+	font-size: 50px;
+	font-family: "arial", sans-serif;
+	padding: 20px;
+        background: linear-gradient(352deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 48%, rgba(7,0,255,1) 100%);
+      }
     </style>
   </head>
 
   <body>
-    <h1>Crack open your loot!</h1>
-    <div 
-      class="pinataBox" 
-      onmousemove="moveWeapon(event)"
-      onmouseout="hideWeapon()"
-      onmouseenter="showWeapon()"
-    >
+    <div class="borderOuter">
+      <div class="borderInner">
+	<div class="textBoxInner">
+	  
+    The nominees fought back!
+        </div>
+      </div>
+    </div>
+    <div class="borderOuter">
+      <div class="borderInner">
+        <div 
+          class="pinataBox" 
+          onmousemove="moveWeapon(event)"
+          onmouseout="hideWeapon()"
+          onmouseenter="showWeapon()"
+        >
+	</div>
+      </div>
     </div>
     <img onload="initWeapon()" id="weapon" class="weapon" src="assets/buster sword.webp"></img>
   </body>
